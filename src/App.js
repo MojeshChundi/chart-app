@@ -24,7 +24,7 @@ function App() {
   return (
     <div>
       <h2>Let's get started!</h2>
-      return(
+
       {expenses.map((ele) => (
         <ExepenseItem
           date={ele.date}
@@ -32,7 +32,6 @@ function App() {
           amount={ele.amount}
         ></ExepenseItem>
       ))}
-      )
     </div>
   );
 }
