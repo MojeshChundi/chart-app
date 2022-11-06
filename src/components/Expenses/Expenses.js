@@ -3,7 +3,7 @@ import ExepenseItem from "./ExepenseItem";
 import Card from "../UI/Card";
 import "./Expenses.css";
 function Expenses() {
-  const expenses = [
+  const expense = [
     {
       id: "e1",
       title: "Toilet Paper",
@@ -27,7 +27,7 @@ function Expenses() {
 
   return (
     <Card className="expenses">
-      {expenses.map((ele) => (
+      {expense.map((ele) => (
         <ExepenseItem date={ele.date} title={ele.title} amount={ele.amount} />
       ))}
     </Card>
