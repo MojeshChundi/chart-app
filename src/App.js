@@ -8,10 +8,14 @@ function App() {
   //   React.createElement("h2", {}, "Let/s gets started!"),
   //   React.createElement(Expenses, {})
   // );
+  const addExpenseHandler = (addData) => {
+    console.log("ap js");
+    console.log(addData);
+  };
 
   return (
     <div>
-      <NewExpenses />
+      <NewExpenses onAddExpense={addExpenseHandler} />
       <Expenses />
     </div>
   );
