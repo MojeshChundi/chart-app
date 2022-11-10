@@ -1,7 +1,9 @@
 import React, { useState } from "react";
-import ExepenseItem from "./ExepenseItem";
+//import ExepenseItem from "./ExepenseItem";
 import Card from "../UI/Card";
 import ExpensesFilter from "./ExpenseFilter";
+import ExpensesList from "./ExpensesList";
+import ExpensesChart from "./ExpensesChart";
 import "./Expenses.css";
 
 function Expenses(props) {
@@ -10,22 +12,16 @@ function Expenses(props) {
     setSelectedYear(selectedYear);
   };
 
-  const filteredYear = props.items.filter((expens) => {
-    return expens.date.getFullYear().toString() === filterYear;
+  const filteredYear = props.items.filter((expense) => {
+    return expense.date.getFullYear().toString() === filterYear;
   });
 
   return (
     <div>
       <Card className="expenses">
         <ExpensesFilter selected={filterYear} SelectYear={yearHandler} />
-        {filteredYear.map((ele) => (
-          <ExepenseItem
-            key={ele.id}
-            date={ele.date}
-            title={ele.title}
-            amount={ele.amount}
-          />
-        ))}
+        <ExpensesChart expenses={filteredYear} />
+        <ExpensesList items={filteredYear} />
       </Card>
     </div>
   );
